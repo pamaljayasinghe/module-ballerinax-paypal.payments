@@ -22,7 +22,7 @@ import ballerina/time;
 
 configurable string sandboxClientId = os:getEnv("PAYPAL_CLIENT_ID");
 configurable string sandboxClientSecret = os:getEnv("PAYPAL_CLIENT_SECRET");
-configurable boolean isLiveServer = ?;
+configurable boolean isLiveServer = false;
 configurable string testOrderId = os:getEnv("PAYPAL_TEST_ORDER_ID");
 configurable string testAuthId = os:getEnv("PAYPAL_TEST_AUTH_ID");
 configurable string testCaptureId = os:getEnv("PAYPAL_TEST_CAPTURE_ID");

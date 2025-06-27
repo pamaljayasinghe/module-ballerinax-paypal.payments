@@ -43,12 +43,12 @@ service / on httpListener {
 
         Authorization2 auth = {
             status: "CREATED",
-            id: id,
+            id,
             amount: { 
                 value: "100.00", 
                 currency_code: "USD" 
             },
-            links: links,
+            links,
             create_time: time:utcToString(time:utcNow()),
             update_time: time:utcToString(time:utcNow())
         };
@@ -81,9 +81,9 @@ service / on httpListener {
         Capture2 capture = {
             status: "COMPLETED",
             id: captureId,
-            amount: amount,
+            amount,
             final_capture: finalCapture,
-            links: links,
+            links,
             create_time: time:utcToString(time:utcNow()),
             update_time: time:utcToString(time:utcNow())
         };
@@ -111,8 +111,8 @@ service / on httpListener {
         Authorization2 reauth = {
             status: "CREATED",
             id: reauthId,
-            amount: amount,
-            links: links,
+            amount,
+            links,
             create_time: time:utcToString(time:utcNow()),
             update_time: time:utcToString(time:utcNow())
         };
@@ -123,7 +123,7 @@ service / on httpListener {
     resource function post v2/payments/authorizations/[string id]/void() returns Authorization2|error? {
         Authorization2 voidedAuth = {
             status: "VOIDED",
-            id: id,
+            id,
             create_time: time:utcToString(time:utcNow()),
             update_time: time:utcToString(time:utcNow())
         };
@@ -142,13 +142,13 @@ service / on httpListener {
 
         Capture2 capture = {
             status: "COMPLETED",
-            id: id,
+            id,
             amount: { 
                 value: "50.00", 
                 currency_code: "USD" 
             },
             final_capture: false,
-            links: links,
+            links,
             create_time: time:utcToString(time:utcNow()),
             update_time: time:utcToString(time:utcNow())
         };
@@ -176,11 +176,11 @@ service / on httpListener {
         Refund refund = {
             status: "COMPLETED",
             id: refundId,
-            amount: amount,
+            amount,
             custom_id: requestBody.custom_id,
             invoice_id: requestBody.invoice_id,
             note_to_payer: requestBody.note_to_payer,
-            links: links,
+            links,
             create_time: time:utcToString(time:utcNow()),
             update_time: time:utcToString(time:utcNow())
         };
@@ -199,12 +199,12 @@ service / on httpListener {
 
         Refund refund = {
             status: "COMPLETED",
-            id: id,
+            id,
             amount: { 
                 value: "25.00", 
                 currency_code: "USD" 
             },
-            links: links,
+            links,
             create_time: time:utcToString(time:utcNow()),
             update_time: time:utcToString(time:utcNow())
         };
